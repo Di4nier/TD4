@@ -70,12 +70,16 @@ public function setImmatriculation($immatriculation2) {
     // On donne les valeurs et on exécute la requête
     $req_prep->execute($values);
     // On récupère les résultats comme précédemment
-    $req_prep->setFetchMode(PDO::FETCH_CLASS, 'Voiture');
+    $req_prep->setFetchMode(PDO::FETCH_CLASS, 'ModelVoiture');
     $tab_voit = $req_prep->fetchAll();
     // Attention, si il n'y a pas de résultats, on renvoie false
-    if (empty($tab_voit))
-    return false;
-    return $tab_voit[0];
+    if (empty($tab_voit)){
+      require '../view/voiture/error.php';
+      return false;
+    }
+    else{
+      return $tab_voit;
+    }
   }
   
   // une methode d'affichage.

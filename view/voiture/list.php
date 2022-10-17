@@ -11,9 +11,7 @@
 
         foreach($tab_v as $v){
             echo '<ul> <li> ' .$nbr .' </li> </ul>';
-            echo '<p> Voiture d\'immatriculation ' . $v->getImmatriculation() . '.</p>';
-            echo '<p> Voiture de couleur ' . $v->getCouleur() . '.</p>';
-            echo '<p> Voiture de Marque ' . $v->getMarque() . '.</p>';
+            echo '<p> Voiture d\'immatriculation ' . '<a href="../controller/routeur.php?action=read&immat='.$v->getImmatriculation().'">' . $v->getImmatriculation() .'</a>' . '.</p>';
             $nbr = $nbr + 1;
             echo '<br>';
         }
