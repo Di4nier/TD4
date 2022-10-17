@@ -19,6 +19,14 @@
             $tab_voit = ModelVoiture::getVoitureByImmat($immat);
             require '../view/voiture/detail.php';
         }
+
+        public static function create(){
+            require '../view/voiture/create.php';
+        }
+
+        public static function created($i,$m,$c){
+            ModelVoiture::Save($i, $m, $c);
+        }
     }
     ?>
 

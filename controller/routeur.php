@@ -3,7 +3,17 @@ require_once 'ControllerVoiture.php';
 // On recupère l'action passée dans l'URL
 $action = $_GET["action"];
 
-if($action == "read"){
+if($action == "created"){
+    $marque = $_GET['marque'];
+    $couleur = $_GET['couleur'];
+    $immat = $_GET['immat'];
+    ControllerVoiture::created($immat,$marque,$couleur);
+    ControllerVoiture::readAll();
+}
+elseif($action == "create"){
+    ControllerVoiture::create();
+}
+elseif($action == "read"){
     $immat = $_GET['immat'];
     ControllerVoiture::read($immat);
 }else{

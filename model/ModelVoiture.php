@@ -101,7 +101,7 @@ public function setImmatriculation($immatriculation2) {
           "tag3" => $c,
       );
       $prep->execute($values);
-      echo "Ajout Effectué !!";
+      echo "<h1>Ajout Effectué !!</h1>";
   }
 
 
